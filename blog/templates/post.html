@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+        <p><span id="posttitle">{{ post.title }}&nbsp;</span><span id="postauthor">by {{ post.user.username }}</span></p>
+        <p id="postdatetime"> - Uploaded: {{post.date|timeago}} ({{ post.date }})</p>
+        <img id="postimg" src="{{ url_for('static', filename='img/' + post.image_file) }}">
+        <p id="postcontent">{{ post.content }}</p>
+        
+        <div id="heartsection">
+        {% if current_user.is_authenticated %}
+                {% if current_user.has_hearted_post(post) %}
+                        <a href="{{ url_for('heart_action', post_id=post.id, action='unheart') }}"><img id="fullheart" src="{{ url_for('static', filename='img/heart.png') }}"></a>
+                {% else %}
+                        <a href="{{ url_for('heart_action', post_id=post.id, action='heart') }}"><img id="emptyheart" src="{{ url_for('static', filename='img/emptyheart.png') }}"></a>
+                {% endif %}
+        {% endif %}
+        {% if post.hearts.count() == 1 %}
+                <span id ="heartcount">{{ post.hearts.count() }} heart</span>
+        {% else %}
+                <span id ="heartcount">{{ post.hearts.count() }} hearts</span>
+        {% endif %}
+        </div>
+        <div id = "commentsection">
+                {% if current_user.is_authenticated %}
+                <div id = "commentbox">
+                <form method="POST" action="{{ url_for('comment_post', post_id=post.id) }}">
+                        {{ form.csrf_token }}
+                        {{ form.text.label }} {{ form.text }}
+                        <input type="submit" value="Post">
+                </form></div>
+                {% else %}
+                <p id = "commentbox">You must be logged in to interact with posts.</p>
+                {% endif %}
+                <h2 id = "commentheading">Comments</h2>
+                {% if post.comments %}
+                        <p>
+                                {% for comment in post.comments|reverse %}
+                                <div class ="comment">
+                                {% if current_user.id == comment.author_id %}
+                                <a href="{{ url_for('deletecomment', id=comment.id)}}"><img id = "flashcross" src="{{ url_for('static', filename = 'cross.png') }}"></a>
+                                {% endif %}
+                                <p><span id="commentauthor">{{ comment.author}}</span><span id="commentdate"> - {{ comment.date|timeago}}</span></p>        
+                                <p id="commenttext">{{ comment.text }}</p>
+                                
+                                </div>
+                                {% endfor %}
+                        </p>
+                {% endif %}
+                </div>
+{% endblock content %}

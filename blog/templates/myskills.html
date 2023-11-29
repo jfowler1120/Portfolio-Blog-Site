@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>My skills...</h1>
+    <p>I'm extremely multifaceted, with skills in programming, writing, teaching, and client-interaction, backed up by my experiences as a student (I have a bachelors degree in English Language and Linguistics, and am currently completing a masters degree in computing) and as a primary school programming tutor. Hired as a software engineer, web dev, game dev, digital copywriter, or any mixture of the aforementioned, I will absolutely exceed your expectations with my skills and capacity to learn.</p>
+    <p>In terms of computing, I have been using computers heavily all my life, building and repairing systems, and setting up networks. I have solid experience with JavaScript, HTML and CSS (1.5yrs); Lua (1.5yrs) and Roblox Studio (since I was 12 years old!); Python (4 months), Flask micro web framework and jinja (2 months); exposure to SQL, C#, GDScript and Unity Game Engine. Check out the posts on the home page to see the things I am making!</p>
+    <p>Additionally, I have experience in a teaching position, having worked at a primary school as a programming tutor for six months before my masters. I also have experience as a professional typist, typing up a Welsh poet's work to collate them into an anthology during my bachelors degree. I have repaired and upgraded my friends' and family's computers and laptops since I was a teen.</p>
+    <p>Please feel free to contact me using the information provided on my about page if you have an questions about me and my skillset!</p>
+
+    <div class="flex-container">
+        <div><img class="skillsimg" src="{{ url_for('static',filename='JavaScript.png') }}"><p class = "skillstxt">JavaScript (1.5 yrs)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='CSS.png') }}"><p class = "skillstxt">CSS (1.5 yrs)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='HTML5.png') }}"><p class = "skillstxt">HTML5 (1.5 yrs)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='Lua.png') }}"><p class = "skillstxt">Lua (1.5 yrs)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='python.png') }}"><p class = "skillstxt">Python (5 months)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='flask.png') }}"><p class = "skillstxt">Flask (2 months)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='Jinja.png') }}"><p class = "skillstxt">Jinja (2 months)</p></div>
+        <div><img class="skillsimg" src="{{ url_for('static',filename='SQL.png') }}"><p class = "skillstxt">SQL (2 months)</p></div>
+    </div>
+    
+{% endblock content %}

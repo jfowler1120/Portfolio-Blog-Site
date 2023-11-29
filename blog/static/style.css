@@ -1,0 +1,338 @@
+* {
+    margin: 0px;
+    color:rgb(66, 66, 66);
+    font-family: Calibri;
+}
+
+body {
+    background-color: rgb(253, 253, 253);
+}
+
+#header {
+    background-color: hsl(39, 100%, 63%);
+    padding: 10px;
+    padding-bottom: 15px;
+    box-shadow: 0px 2px 4px rgb(180, 180, 180);
+    z-index: 20;
+}
+
+.dropdowncontent {
+    display: none;
+}
+
+.dropdown {
+    display: block;
+    position: static;
+    height: 0vh;
+    width: 0px;
+    top: 0px;
+    z-index: 15;
+}
+
+/*.dropdown:hover .dropdowncontent, .navbutton {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1.25em;
+    z-index: 15;
+    top: -10px;
+}*/
+
+/*.dropdown:hover .dropdowncontent {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: fit-content;
+    font-size: 1.25em;
+    z-index: 15;
+    top: -10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+}*/
+
+/*.dropdown:hover .dropdownbackground {
+    background-color:rgb(244, 244, 244);
+    float: left;
+    position: fixed;
+    height: 140px;
+    width: 160px;
+    top: 63px;
+    z-index: auto;
+    box-shadow: 2px 2px 2px rgb(180, 180, 180);
+    border-radius: 5%;
+}*/
+
+#maintitle { 
+    display: block;
+    margin-left: 50px;
+    width:auto;
+    padding-bottom: 0px;
+    color:white;
+    position:relative;
+    text-shadow: 2px 2px 4px rgb(137, 108, 71);
+    text-decoration:black;
+    padding-bottom: 1px;
+}   
+
+#titlellama {
+    float: left;
+    display: inherit;
+    top: 0px;
+    width: 42px;
+    height: 40px;
+}
+
+#navdropdownbutton {
+    z-index: 2;
+    height: 30px;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 20%;
+}
+
+#userdropdownbutton {
+    z-index: 2;
+    height: 30px;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 20%;
+}
+
+#userdropdown {
+    float: right;
+    right: 55px;
+    top: 12px;
+    position: absolute;
+}
+
+#userdropdown .dropdowncontent {
+    right: 165px;
+    text-align: right;
+}
+
+#userdropdown .dropdownbackground {
+    right: 15px;
+}
+
+#navdropdownbutton:hover {
+    background-color:hsl(39, 59%, 49%);
+    cursor: pointer;
+}
+
+#userdropdownbutton:hover {
+    background-color:hsl(39, 59%, 49%);
+    cursor: pointer;
+}
+
+nav {
+    margin-bottom: 1vh;
+}
+
+#content {
+    background-color: rgb(236, 236, 236);
+    padding: 20px;
+    margin: 8vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px rgb(180, 180, 180);
+    border-radius: 10px;
+    text-overflow:ellipsis
+}
+
+.navbutton {
+    color: rgb(66, 66, 66);
+    text-decoration:none;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding: 5px;
+    width: 125px;
+}
+
+#usernamelabel {
+    float: right;
+    position: absolute;
+    right: 60px;
+    top: 23px;
+    color: white;
+}
+
+#flashbox {
+    list-style-type:none;
+    background-color: rgb(236, 236, 236);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 2px 4px rgb(180, 180, 180);
+}
+
+#flashcross {
+    margin-top: -3px;
+    height: 15px;
+    width: 15px;
+    margin-right: 8px;
+    display: block;
+    float: right;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#flashcross:hover {
+    cursor: pointer;
+    background-color: rgb(194, 194, 194);
+}
+
+.flashes {
+    list-style-type:none;
+}
+
+.comment {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.flex-container {
+    margin: 20px;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.skillsimg {
+    height: 100px;
+    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.skillstxt {
+    padding-top: 15px;
+    text-align: center;
+    color: rgb(101, 101, 101);
+    font-weight: bold;
+}
+
+#heartsection {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#commentbox {
+    float: right;
+}
+
+#commentauthor {
+    font-size: smaller;
+    font-weight: bold;
+    color: grey;
+}
+
+#commentdate {
+    font-size: small;
+    color: rgb(160, 160, 160);
+}
+
+#postlist {
+    background-color:rgb(226, 226, 226);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.postlink {
+    padding-left: 10px;
+    padding-bottom: 2px;
+}
+
+#titleanchor {
+    color: white;
+    font-size: 2em;
+    font-family: "Harlow Solid Italic";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbutton:hover {
+    color: rgb(66, 66, 66);
+    background-color:hsl(0, 0%, 84%);
+}
+
+a:hover {
+    color:gray;
+}
+
+#posttitle {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+#postauthor {
+    font-style: italic;
+    display: block;
+    padding-top: 10px;
+    color: rgb(147, 147, 147);
+}
+
+#postcontent {
+    padding-top: 10px;
+    white-space: wrap;
+    text-align: justify;
+    text-overflow:ellipsis;
+}
+
+#postimg {
+    width: 300px;
+    float: right;
+    display: block;
+    margin: 15px;
+}
+
+#postdatetime {
+    font-style: italic;
+    color: rgb(147, 147, 147);
+}
+
+#fullheart {
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+#fullheart:hover {
+    cursor: pointer;
+    background-color: rgb(216, 216, 216);
+}
+
+
+#emptyheart {
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+#emptyheart:hover {
+    cursor: pointer;
+    background-color: rgb(216, 216, 216);
+}
+
+#heartcount {
+    display: block;
+    float: left;
+    margin-top: 8px;
+    padding-right: 5px;
+    color: rgb(147, 147, 147);
+    font-style: italic;
+}

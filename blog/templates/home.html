@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome to alpacaSoft!</h1>
+    <p>This is my online, interactive portfolio and C.V, wherein I document my programming work and achievements. To get started, feel free to view and interact with the below posts, or use the hamburger icon above to view more focussed information about me, such as my skills and contact information.</p>
+    <br>
+    <h2>Portfolio</h2>
+    <div id="postlist">
+    {% for post in posts|reverse %}
+    <p class="postlink"><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }} &nbsp;
+    {% if post.hearts.count() == 1 %}
+        ({{ post.hearts.count() }} heart)
+    {% else %}
+        ({{ post.hearts.count() }} hearts)
+    {% endif %}
+    </a></p>
+            
+    {% endfor %}
+    </div> 
+{% endblock content %}

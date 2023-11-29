@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
+    <title>alpacaSoft</title>
+    
+</head>
+<body>
+    <div id="header">
+        <span class="dropdown" id="menudropdown">
+            <span class="dropdownbackground" id = "1"></span>
+            <img src="{{ url_for('static',filename='Hamburger_icon.png') }}" id="navdropdownbutton" alt="MENU">
+            <nav class="dropdowncontent" id="2">
+                <a href="{{ url_for('home') }}"><p id="homelink" class="navbutton">Home</p></a>
+                <a href="{{ url_for('about') }}"><p id="aboutlink" class="navbutton">About</p></a>
+                <a href="{{ url_for('myskills') }}"><p id="myskillslink" class="navbutton">My Skills</p></a>
+            </nav>
+        </span>
+        <p id="usernamelabel">{{ current_user.username }}</p>
+        <span class="dropdown" id="userdropdown">
+            <span class="dropdownbackground" id = "U1"></span>
+            <img src="{{ url_for('static',filename='free-user-icon-3296-thumb.png') }}" id="userdropdownbutton" alt="MENU">
+            <nav class="dropdowncontent" id = "U2">
+                <a href="{{ url_for('login') }}"><p id="loginlink" class="navbutton">Login</p></a>
+                <a href="{{ url_for('register') }}"><p id="registerlink" class="navbutton">Register</p></a>
+                <a href="{{ url_for('logout') }}"><p id="logoutlink" class="navbutton">Logout</p></a>
+            </nav>
+        </span>
+        <script src="{{ url_for('static',filename='menus.js') }}"></script>
+        <div id="maintitle"> 
+            <a href="{{ url_for('home') }}"><span id="titleanchor">
+                <img id="titlellama" src="{{ url_for('static',filename='llama.png') }}">
+                alpacaSoft
+            </span></a>
+        </div>
+        </nav>               
+        </div>
+        
+          
+    </div>
+    <div id="flashbox">
+        <img id="flashcross" src="{{ url_for('static',filename='cross.png') }}">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }} <button</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+        {% endwith %}
+    </div>
+    <script src="{{ url_for('static',filename='flashes.js') }}"></script>
+    <div id="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
